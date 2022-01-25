@@ -1,0 +1,63 @@
+{
+    "MachineId": "MID80",
+    "jobID": "JID-01",
+    "operatorID": "OID-02",
+    "shiftID": "SID-01",
+    "MachineStatus": "True",
+    "LastUpdatedTime": "2022-01-25 13:12:30.534300",
+    "TotalDuration": "7:10:15",
+    "CurrentDate": "2022-01-25",
+    "RecycleTime": 6,
+    "Running": {
+        "ActiveHours": "05:56:55",
+        "Percentage": "100",
+        "FormattedActiveHours": "05h 56m 55s"
+    },
+    "Down": {
+        "ActiveHours": "01:13:20",
+        "Percentage": "100",
+        "FormattedActiveHours": "01h 13m 20s",
+        "category": {
+            "Planned": {
+                "ActiveHours": "0:47:58",
+                "Percentage": "100",
+                "FormattedActiveHours": "0h 47m 58s",
+                "Details": [
+                    {
+                        "DownCode": "202",
+                        "DownReasons": "Tea Break",
+                        "color": "#F8425F",
+                        "ActiveHours": "0:19:00",
+                        "FormattedActiveHours": "0h 19m 00s"
+                    },
+                    {
+                        "DownCode": "203",
+                        "DownReasons": "No Shift Plan",
+                        "color": "#778899",
+                        "ActiveHours": "0:28:58",
+                        "FormattedActiveHours": "0h 28m 58s"
+                    }
+                ]
+            },
+            "Unplanned": {
+                "ActiveHours": "00:25:37",
+                "Percentage": "100",
+                "FormattedActiveHours": "00h 25m 37s",
+                "Details": [
+                    {
+                        "DownCode": "205",
+                        "DownReasons": "Mechanical Breakdown",
+                        "color": "#FF6347",
+                        "ActiveHours": "00:25:37",
+                        "FormattedActiveHours": "00h 25m 37s"
+                    }
+                ]
+            }
+        }
+    },
+    "badCount": 20,
+    "goodCount": 100,
+    "RecycledDate": "2022-01-25 06:00:00.509684",
+    "DownTimeReasonCode": "205",
+    "ProductionLastUpdateTime": "2022-01-25 13:11:42.495839"
+}

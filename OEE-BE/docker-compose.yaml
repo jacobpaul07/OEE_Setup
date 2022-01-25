@@ -1,0 +1,66 @@
+# __Author__      = " Jacob Paul "
+# Description     = " Docker Compose to run the CNC-API Django project with Mongo and Redis Containers in same network "
+
+version: '3'
+
+services:
+
+  backend:
+    image: "siqsessedge/cnc-api:CNC-v8.5"
+    container_name: "oee_backend"
+    environment:
+      "ApplicationMode" : "mobile"
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./DockerFiles/JsonDataBase/:/cnc/App/LiveJsonDataBase/"
+      - "./DockerFiles/JsonConfiguration/:/cnc/App/JsonConfiguration/"
+      - "./DockerFiles/ExcelProduction:/cnc/App/Excel"
+      - "./DockerFiles/JsonWeb/:/cnc/Webapp/JsonWeb/"
+      - "./DockerFiles/Database/:/cnc/Database/"
+      - "/etc/timezone:/etc/timezone"
+      - "/etc/localtime:/etc/localtime"
+
+    depends_on:
+      - redis
+      - mongo
+    networks:
+      cloud-network:
+        ipv4_address: 172.11.0.2
+    restart: always
+
+  redis:
+    image: "redis:5"
+    container_name: "oee_redis"
+    ports:
+      - "6379:6379"
+    networks:
+      cloud-network:
+        ipv4_address: 172.11.0.3
+    restart: always
+
+  mongo:
+    image: "mongo:bionic"
+    container_name: "oee_mongo"
+    ports:
+      - "27016:27017"
+    volumes:
+      - './DockerFiles/MongoDB/data:/data/db'
+
+    networks:
+      cloud-network:
+        ipv4_address: 172.11.0.4
+    restart: always
+  
+  restarter:
+    image: docker
+    volumes: [ "/var/run/docker.sock:/var/run/docker.sock" ]
+    command: [ "/bin/sh", "-c", "while true; do sleep 28800; docker restart oee_backend; done" ]
+    restart: always
+
+networks:
+  cloud-network:
+    ipam:
+      config:
+        - subnet: 172.11.0.0/16
+

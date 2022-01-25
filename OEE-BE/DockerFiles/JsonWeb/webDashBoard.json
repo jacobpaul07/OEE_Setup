@@ -1,0 +1,30 @@
+{
+    "machineData": [
+        {
+            "machineID": "MID80",
+            "machineName": "MID80",
+            "status": "Machine ON",
+            "description": "Running",
+            "color": "#8FD381",
+            "location": "Floor 2",
+            "availability": "98.04",
+            "performance": "93.99",
+            "quality": "83.33",
+            "oee": "76.79",
+            "statusType": "running"
+        },
+        {
+            "machineID": "MID81",
+            "machineName": "MID81",
+            "status": "Machine ON",
+            "description": "Running",
+            "color": "#8FD381",
+            "location": "Floor 2",
+            "availability": "100.0",
+            "performance": "99.72",
+            "quality": "76.47",
+            "oee": "76.26",
+            "statusType": "running"
+        }
+    ]
+}
