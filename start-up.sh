@@ -2,7 +2,8 @@
 # install docker
 ./docker-install.sh
 # Deploy the docker images
-docker-compose up -d --force-recreate -f ./Kafka/docker-compose.yml
-docker-compose up -d --force-recreate -f ./OEE-BE/docker-compose.yml
-docker-compose up -d --force-recreate -f ./OEE-UI/docker-compose.yml
-docker-compose up -d --force-recreate -f ./OPC-Server/docker-compose.yml
+docker-compose -f ./Kafka/docker-compose.yml up -d --force-recreate
+docker-compose -f ./Kafka/docker-compose.yml up -d --force-recreate
+docker-compose -f ./OEE-BE/docker-compose.yml up -d --force-recreate
+docker-compose -f ./OEE-UI/docker-compose.yml up -d --force-recreate
+docker-compose -f ./OPC-Server/docker-compose.yml up -d --force-recreate
