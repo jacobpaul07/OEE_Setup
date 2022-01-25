@@ -1,4 +1,5 @@
 #!/bin/bash
+chmod +x docker-install.sh
 sudo apt update
 sudo apt install python3-pip
 
