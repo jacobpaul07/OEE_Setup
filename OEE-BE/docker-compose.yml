@@ -1,6 +1,3 @@
-# __Author__      = " Jacob Paul "
-# Description     = " Docker Compose to run the CNC-API Django project with Mongo and Redis Containers in same network "
-
 version: '3'
 
 services:

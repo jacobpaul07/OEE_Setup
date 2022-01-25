@@ -3,7 +3,7 @@ version: '3.4'
 services:
 
   client:
-      image: siqsessedge/oeedashboard:v5.3
+      image: siqsessedge/oeedashboard:v5.4
       container_name: "oee_dashboard"
       environment:
         NODE_ENV: production
